@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AlternativesController;
+use App\Http\Controllers\Calculations;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +24,21 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/calculation', [Calculations::class, 'index'])
+        ->middleware(['auth', 'verified'])->name('calculation');
+
+Route::post('/calculation/result', [Calculations::class, 'calculate'])
+        ->middleware(['auth', 'verified'])->name('calculation/result');
+
 Route::get('/criteria', function () {
     return view('criteria');
 })->middleware(['auth', 'verified'])->name('criteria');
+
+Route::get('/alternatives', [AlternativesController::class, 'index'])
+        ->middleware(['auth', 'verified'])->name('alternatives');
+
+Route::get('/alternatives/add', [AlternativesController::class, 'addAlternative'])
+        ->middleware(['auth', 'verified'])->name('alternatives/add');
 
 Route::get('/result', function () {
     return view('result');
@@ -43,5 +57,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';

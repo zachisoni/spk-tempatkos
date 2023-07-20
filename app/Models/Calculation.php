@@ -23,4 +23,5 @@ class Calculation extends Model
     {
         $this->belongsTo(History::class);
     }
+
 }
