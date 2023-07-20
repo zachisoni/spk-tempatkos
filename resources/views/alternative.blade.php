@@ -10,6 +10,10 @@
             <h1 class="text-white font-black text-2xl pb-5">Please insert your Alternative and Value</h1>
             {{-- @if () --}}
             {{-- @foreach ($collection as $item) --}}
+            <a id="btn-add" onclick="addAlt()"
+                class="bg-green-500 hover:bg-green-700 rounded-md p-3 text-md font-black flex justify-center mt-3 mb-3 mx-96">
+                Add alternative
+            </a>
             <div class="bg-gray-600 border-0 rounded-md flex justify-between">
                 <p class="font-bold text-lg pr-4 pl-10 py-3 text-white">Kos 1</p>             
                 
@@ -111,7 +115,6 @@
             {{-- @endforeach --}}
             {{-- @endif --}}
         </div>
-        <a href="" class="bg-green-500 hover:bg-green-700 rounded-md p-3 text-md font-black flex justify-center mt-3 mx-96">Add alternative</a>
         
     </div>
 </x-app-layout>

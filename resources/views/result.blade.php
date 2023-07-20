@@ -36,46 +36,28 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($names as $key => $name)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th class="px-6 py-4 ">
-                                A1
+                                {{ $name }}
                             </th>
                             <th class="px-6 py-4 ">
-                                4
+                                {{ $transposed[0][$key] }}
                             </th>
                             <td class="px-6 py-4">
-                                4
+                                {{ $transposed[1][$key] }}
                             </td>
                             <td class="px-6 py-4">
-                                5
+                                {{ $transposed[2][$key] }}
                             </td>
                             <td class="px-6 py-4">
-                                6
+                                {{ $transposed[3][$key] }}
                             </td>
                             <td class="px-2 py-4">
-                                4
+                                {{ $transposed[4][$key] }}
                             </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th class="px-6 py-4">
-                                A2
-                            </th>
-                            <th class="px-6 py-4">
-                                1
-                            </th>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                8
-                            </td>
-                            <td class="px-6 py-4">
-                                4
-                            </td>
-                            <td class="px-2 py-4">
-                                5
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -108,46 +90,28 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($normalization as $key => $normal)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th class="px-6 py-4 ">
-                                A1
+                                {{ $names[$key] }}
                             </th>
                             <th class="px-6 py-4 ">
-                                4
+                                {{ $normal[0] }}
                             </th>
                             <td class="px-6 py-4">
-                                4
+                                {{ $normal[1] }}
                             </td>
                             <td class="px-6 py-4">
-                                5
+                                {{ $normal[2] }}
                             </td>
                             <td class="px-6 py-4">
-                                6
+                                {{ $normal[3] }}
                             </td>
                             <td class="px-2 py-4">
-                                4
+                                {{ $normal[4] }}
                             </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th class="px-6 py-4">
-                                A2
-                            </th>
-                            <th class="px-6 py-4">
-                                1
-                            </th>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                8
-                            </td>
-                            <td class="px-6 py-4">
-                                4
-                            </td>
-                            <td class="px-2 py-4">
-                                5
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -174,34 +138,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th class="px-6 py-4 ">
-                                A1
-                            </th>
-                            <th class="px-6 py-4 ">
-                                rumus
-                            </th>
-                            <td class="px-6 py-4">
-                                4
-                            </td>
-                            <td class="px-6 py-4">
-                                5
-                            </td>
-                        </tr>
+                        @php($rank = 1)
+                        @foreach ($results as $key => $result)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th class="px-6 py-4">
-                                A2
+                                {{ $names[$result] }}
                             </th>
                             <th class="px-6 py-4">
-                                rumus
+                                (c1*w1) + (c2*w2) + (c3*w3) + (c4*w4) + (c5*w5)
                             </th>
                             <td class="px-6 py-4">
-                                2
+                                {{  $key }}
                             </td>
                             <td class="px-6 py-4">
-                                8
+                                {{ $rank }}
                             </td>
+                            @php($rank ++)
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -21,8 +21,8 @@
                     <x-nav-link :href="route('alternative')" :active="request()->routeIs('alternative')">
                         {{ __('Calculation') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('result')" :active="request()->routeIs('result')">
-                        {{ __('Result') }}
+                    <x-nav-link :href="route('histories')" :active="request()->routeIs('histories*')">
+                        {{ __('History') }}
                     </x-nav-link>
                     <x-nav-link :href="route('alternatives')" :active="request()->routeIs('alternatives*')">
                         {{ __('Alternatives') }}
@@ -52,7 +52,7 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('history')">
+                        <x-dropdown-link :href="route('histories')">
                             {{ __('History') }}
                         </x-dropdown-link>
 

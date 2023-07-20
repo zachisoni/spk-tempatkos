@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlternativesController;
 use App\Http\Controllers\Calculations;
+use App\Http\Controllers\HistoriesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,9 +45,11 @@ Route::get('/result', function () {
     return view('result');
 })->middleware(['auth', 'verified'])->name('result');
 
-Route::get('/history', function () {
-    return view('history');
-})->middleware(['auth', 'verified'])->name('history');
+Route::get('/histories', [HistoriesController::class, 'index'])
+        ->middleware(['auth', 'verified'])->name('histories');
+
+Route::get('/history/{id}', [HistoriesController::class, 'detail'])
+        ->middleware(['auth', 'verified'])->name('history/{id}');
 
 Route::get('/alternative', function () {
     return view('alternative');
