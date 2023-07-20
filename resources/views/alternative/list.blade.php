@@ -7,7 +7,7 @@
   <div class="py-12 bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <a type="button" href="{{ route('alternatives/add') }}"
-        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 w-full p-3 m-5 text-center">
+        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 w-full p-3 text-center">
         Add Alternative
       </a>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
