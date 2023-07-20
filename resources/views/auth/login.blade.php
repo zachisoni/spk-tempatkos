@@ -1,5 +1,5 @@
-<x-guest-layout>
-    <div class="bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply">
+<x-guest-layout class="bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply">
+
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -46,5 +46,4 @@
                 </x-primary-button>
         </div>
     </form>
-    </div>
 </x-guest-layout>
