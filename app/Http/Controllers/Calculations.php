@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alternative;
+use App\Models\Calculation;
+use App\Models\History;
 use Illuminate\Http\Request;
 
 class Calculations extends Controller
 {
 
+    /**
+     * array bobot dari masing-masing kriteria. Diawali dengan kriteria 1 
+     */
     protected $weight = [0.3, 0.2, 0.25, 0.15, 0.6];
 
     public function index(){
@@ -16,16 +21,14 @@ class Calculations extends Controller
     }
 
     public function calculate(Request $request){
-        // $size = $request->input('size');
         $datas = [];
+        $names = [];
         $alternatives = $request->input('alt');
-        // $ids = explode("|", $ids);
 
         for ($i=0; $i < count($alternatives); $i++) { 
             $datas[$i] = Alternative::getAll()->find($alternatives[$i]);
         }
 
-        // dd($datas);
         //Transpose (Kolom jadi baris, baris jadi kolom) hasil dari databse
         $transposed = [];
         foreach ($datas as $key => $data) {
@@ -34,9 +37,8 @@ class Calculations extends Controller
             $transposed[2][$key] = $data->criteria3;
             $transposed[3][$key] = $data->criteria4;
             $transposed[4][$key] = $data->criteria5;
+            $names[$key] = $data->name;
         }
-        
-        // dd($transposed);
 
         $minmax = [];
         foreach ($transposed as $key => $n) {
@@ -46,8 +48,6 @@ class Calculations extends Controller
                 $minmax[$key] = max($n);
             }
         }
-
-        // dd($minmax);
 
         $normalization = [];
         //normalisasi
@@ -61,27 +61,36 @@ class Calculations extends Controller
             }
         }
 
-        // dd($normalization);
-
-        $result = [];
+        $results = [];
         foreach ($normalization as $key => $normal) {
             for ($i=0; $i < 5; $i++) { 
                 $normal[$i] = $normal[$i] * $this->weight[$i];
             }
-            $result[$key] = array_sum($normal);
+            $results[''.array_sum($normal).''] = $key;
         }
 
-        // dd($result);
+        $historiesModel = new History;
+        $historiesModel->user_id = $datas[0]->user_id;
+        $historiesModel->save();
+        $history_id = $historiesModel->id;
 
-        $max = max($result);
-        $first = $datas[array_search($max, $result)];
-        // dd($first);
+        krsort($results);
+        $rank = 1;
+        foreach ($results as $key => $result) {
+            $calculationModel = new Calculation;
+            $calculationModel->alternative_id = $datas[$result]->id;
+            $calculationModel->history_id = $history_id;
+            $calculationModel->value = $key;
+            $calculationModel->ranking = $rank;
+            $rank++;
+            $calculationModel->save();
+        }
 
-        return view('calculation.result', [
+        return view('result', [
+            'names' => $names,
             'transposed' => $transposed,
-            'normalzation' => $normalization,
-            'result' => $result,
-            'first' => $first
+            'normalization' => $normalization,
+            'results' => $results
         ]);
 
     }

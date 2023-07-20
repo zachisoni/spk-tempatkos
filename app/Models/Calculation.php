@@ -16,12 +16,12 @@ class Calculation extends Model
     protected $guarded = ['id'];
 
     public function alternative(){
-        $this->belongsTo(Alternative::class);
+        return $this->belongsTo(Alternative::class);
     }
 
     public function history()
     {
-        $this->belongsTo(History::class);
+        return $this->belongsTo(History::class);
     }
 
 }

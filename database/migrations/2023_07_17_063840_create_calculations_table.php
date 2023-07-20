@@ -15,6 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('alternative_id');
             $table->foreignId('history_id');
+            $table->float('n1');
+            $table->float('n2');
+            $table->float('n3');
+            $table->float('n4');
+            $table->float('n5');
+            $table->float('value');
             $table->integer('ranking');
             $table->timestamps();
         });
