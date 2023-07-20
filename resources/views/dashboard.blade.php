@@ -42,7 +42,7 @@
             </div>
         </div>
         
-        <div class="bg-center bg-no-repeat bg-scroll bg-[url('https://source.unsplash.com/1500x1500?dorm')] bg-gray-700 bg-blend-multiply pt-16 px-8">
+        <div class="bg-center bg-no-repeat bg-scroll bg-[url('https://source.unsplash.com/1500x1500?dorm')] bg-gray-700 bg-blend-multiply py-16 px-8">
             <div class="flex justify-center gap-8 py-8">
                 <div class="flex items-start">
                     <img src="/img/num1.png" width="90px">
