@@ -41,6 +41,19 @@ Route::get('/alternatives', [AlternativesController::class, 'index'])
 Route::get('/alternatives/add', [AlternativesController::class, 'addAlternative'])
         ->middleware(['auth', 'verified'])->name('alternatives/add');
 
+Route::get(
+    '/alternatives/edit/{id}', [AlternativesController::class, 'edit'
+    ])->middleware(['auth', 'verified'])->name('alternatives/edit');
+
+Route::put('/alternatives/store', [AlternativesController::class, 'store'])
+        ->middleware(['auth', 'verified'])->name('alternatives/store');
+
+Route::post('/alternatives/delete/{id}', [AlternativesController::class, 'delete'])
+        ->middleware(['auth', 'verified']);
+
+Route::put('/alternatives/update/{id}', [AlternativesController::class, 'update'])
+        ->middleware(['auth', 'verified']);
+
 Route::get('/result', function () {
     return view('result');
 })->middleware(['auth', 'verified'])->name('result');

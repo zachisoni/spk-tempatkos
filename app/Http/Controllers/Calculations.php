@@ -33,7 +33,7 @@ class Calculations extends Controller
         $transposed = [];
         foreach ($datas as $key => $data) {
             $transposed[0][$key] = $data->criteria1;
-            $transposed[1][$key] = $data->criteria2;
+            $transposed[1][$key] = Alternative::changePrice($data->criteria2);
             $transposed[2][$key] = $data->criteria3;
             $transposed[3][$key] = $data->criteria4;
             $transposed[4][$key] = $data->criteria5;
@@ -61,6 +61,15 @@ class Calculations extends Controller
             }
         }
 
+        foreach ($normalization as $key =>$normal) {
+            $calculationModel = new Calculation;
+            $calculationModel->n1 = $normal[0];
+            $calculationModel->n2 = $normal[1];
+            $calculationModel->n3 = $normal[2];
+            $calculationModel->n4 = $normal[3];
+            $calculationModel->n5 = $normal[4];
+        }
+
         $results = [];
         foreach ($normalization as $key => $normal) {
             for ($i=0; $i < 5; $i++) { 
@@ -86,12 +95,12 @@ class Calculations extends Controller
             $calculationModel->save();
         }
 
-        return view('result', [
-            'names' => $names,
-            'transposed' => $transposed,
-            'normalization' => $normalization,
-            'results' => $results
-        ]);
-
+        // return view('result', [
+        //     'names' => $names,
+        //     'transposed' => $transposed,
+        //     'normalization' => $normalization,
+        //     'results' => $results
+        // ]);
+        return redirect()->to("/history/$history_id");
     }
 }

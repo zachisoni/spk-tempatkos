@@ -38,7 +38,7 @@ class HistoriesController extends Controller
         $transpose = [];
         foreach ($values as $key => $value) {
             $transpose[0][$key] = $value->criteria1;
-            $transpose[1][$key] = $value->criteria2;
+            $transpose[1][$key] = Alternative::changePrice($value->criteria2);
             $transpose[2][$key] = $value->criteria3;
             $transpose[3][$key] = $value->criteria4;
             $transpose[4][$key] = $value->criteria5;

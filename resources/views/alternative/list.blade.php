@@ -35,6 +35,9 @@
               <th scope="col" class="px-6 py-3">
                 Kemananan
               </th>
+              <th scope="col" class="px-6 py-3">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody >
@@ -45,10 +48,20 @@
                   </th>
                   <td class="px-6 py-4">{{ $alternative->name }}</td>
                   <td class="px-6 py-4">{{ $alternative->criteria1 }}</td>
-                  <td class="px-6 py-4">{{ $alternative->criteria2 }}</td>
+                  <td class="px-6 py-4">Rp {{ $alternative->criteria2 }}</td>
                   <td class="px-6 py-4">{{ $alternative->criteria3 }}</td>
                   <td class="px-6 py-4">{{ $alternative->criteria4 }}</td>
                   <td class="px-6 py-4">{{ $alternative->criteria5 }}</td>
+                  <td class="px-6 py-4">
+                    <a href="/alternatives/edit/{{ $alternative->id }}"
+                        class="text-blue-500 mx-5">
+                      Edit
+                    </a>
+                    <a href="/alternatives/delete/{{ $alternative->id }}" onclick="return confirm('Are you sure want to delete this alternative?')"
+                        class="text-red-500 mx-5">
+                      Delelte
+                    </a>
+                  </td>
                 </tr>
             @endforeach
           </tbody>
