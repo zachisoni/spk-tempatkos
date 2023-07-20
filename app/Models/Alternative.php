@@ -30,4 +30,20 @@ class Alternative extends Model
     public static function getRow(string $id){
         return Alternative::getAll()->find((int)$id);
     }
+
+    public static function changePrice(int $price){
+        if($price < 500000){
+            return 5;
+        } else if ($price >= 500000 && $price < 700000){
+            return 4;
+        } else if ($price >= 700000 && $price < 1000000){
+            return 3;
+        } else if ($price >= 1000000 && $price < 2000000){
+            return 2;
+        } else if ($price > 2000000){
+            return 1;
+        }else {
+            return 0;
+        }
+    }
 }
