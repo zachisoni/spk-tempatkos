@@ -13,7 +13,7 @@ class Calculations extends Controller
     /**
      * array bobot dari masing-masing kriteria. Diawali dengan kriteria 1 
      */
-    protected $weight = [0.3, 0.2, 0.25, 0.15, 0.6];
+    protected $weight = [0.3, 0.25, 0.20, 0.15, 0.1];
 
     public function index(){
         $alternatives = Alternative::getAll();
