@@ -29,6 +29,8 @@ class Calculations extends Controller
             $datas[$i] = Alternative::getAll()->find($alternatives[$i]);
         }
 
+        // dd($alternatives);
+
         //Transpose (Kolom jadi baris, baris jadi kolom) hasil dari databse
         $transposed = [];
         foreach ($datas as $key => $data) {
@@ -62,12 +64,6 @@ class Calculations extends Controller
         }
 
         foreach ($normalization as $key =>$normal) {
-            $calculationModel = new Calculation;
-            $calculationModel->n1 = $normal[0];
-            $calculationModel->n2 = $normal[1];
-            $calculationModel->n3 = $normal[2];
-            $calculationModel->n4 = $normal[3];
-            $calculationModel->n5 = $normal[4];
         }
 
         $results = [];
@@ -82,6 +78,7 @@ class Calculations extends Controller
         $historiesModel->user_id = $datas[0]->user_id;
         $historiesModel->save();
         $history_id = $historiesModel->id;
+        // dd($historiesModel);
 
         krsort($results);
         $rank = 1;
@@ -91,6 +88,11 @@ class Calculations extends Controller
             $calculationModel->history_id = $history_id;
             $calculationModel->value = $key;
             $calculationModel->ranking = $rank;
+            $calculationModel->n1 = $normalization[$result][0];
+            $calculationModel->n2 = $normalization[$result][1];
+            $calculationModel->n3 = $normalization[$result][2];
+            $calculationModel->n4 = $normalization[$result][3];
+            $calculationModel->n5 = $normalization[$result][4];
             $rank++;
             $calculationModel->save();
         }

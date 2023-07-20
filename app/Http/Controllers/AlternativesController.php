@@ -21,7 +21,7 @@ class AlternativesController extends Controller
     public function store(Request $request){
         $alternativeModel = new Alternative;
         $alternativeModel->name = $request->input('name');
-        $alternativeModel->user_id = $request->input(Auth::user()->id);
+        $alternativeModel->user_id = Auth::user()->id;
         $alternativeModel->criteria1 = $request->input('location');
         $alternativeModel->criteria2 = $request->input('price');
         $alternativeModel->criteria3 = $request->input('facility');
@@ -45,7 +45,7 @@ class AlternativesController extends Controller
     public function update(Request $request, int $id){
         $alternativeModel = Alternative::find($id);
         $alternativeModel->name = $request->input('name');
-        $alternativeModel->user_id = $request->input(Auth::user()->id);
+        $alternativeModel->user_id = Auth::user()->id;
         $alternativeModel->criteria1 = $request->input('location');
         $alternativeModel->criteria2 = $request->input('price');
         $alternativeModel->criteria3 = $request->input('facility');

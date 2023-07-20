@@ -10,7 +10,7 @@
     <h1 class="text-white font-bold text-xl">Please choose several alternatives to calculate</h1>
     
     <form action="{{ route('calculation/result') }}" method="POST">
-      
+      @csrf
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -26,7 +26,7 @@
           <tbody id="alt-body">
               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="0">
                   <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <select name="alt[0]" id="alt[0]" class="w-2/5">
+                    <select name="alt[0]" id="alt[0]" class="w-2/5 text-black">
                       @foreach ($alternatives as $alternative)
                           <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
                       @endforeach
@@ -39,9 +39,10 @@
           </tbody>
       </table>
     </div>
-    <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 p-3 m-5 text-center"
-          id="btn-add" onclick="addRow();">Tambah Alternatif</button>
-          <button type="submit" class="bg-blue-600 hover:bg-blue-800 p-3 rounded-md">Hitung</button>
+    <input type="text" name="ids" id="ids" hidden>
+      <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 p-3 m-5 text-center"
+        id="btn-add" onclick="addRow();">Tambah Alternatif</button>
+      <button type="submit" class="bg-blue-600 hover:bg-blue-800 p-3 rounded-md">Hitung</button>
     </form>
   </div>
   
@@ -65,11 +66,10 @@
       const alt_dropdown = document.createElement('select')
       alt_dropdown.setAttribute("name", `alt[${size}]`)
       alt_dropdown.id = `alt[${size}]`
-      alt_dropdown.innerHTML = `
-        @foreach ($alternatives as $alternative)
-        <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
+      alt_dropdown.innerHTML = `@foreach ($alternatives as $alternative)
+            <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
         @endforeach`
-      alt_dropdown.classList.add ('w-2/5')
+      alt_dropdown.classList.add ('w-2/5', 'text-black')
         
       alt_td.appendChild(alt_dropdown)
 
