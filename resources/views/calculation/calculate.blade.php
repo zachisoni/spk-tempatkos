@@ -41,7 +41,7 @@
     </div>
     <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 p-3 m-5 text-center"
           id="btn-add" onclick="addRow();">Tambah Alternatif</button>
-          <button type="submit" class="bg-blue-600 hover:bg-blue-800 p-3 rounded-md">Hitung</button>
+          <button type="submit" class="bg-blue-600 hover:bg-blue-800 p-3 rounded-md font-bold text-white">Hitung</button>
     </form>
   </div>
   
