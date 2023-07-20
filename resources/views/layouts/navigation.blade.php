@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('criteria')" :active="request()->routeIs('criteria')">
                         {{ __('Criteria') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('alternative')" :active="request()->routeIs('alternative')">
+                        {{ __('Calculation') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('result')" :active="request()->routeIs('result')">
                         {{ __('Result') }}
                     </x-nav-link>
