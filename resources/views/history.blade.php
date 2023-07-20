@@ -14,7 +14,7 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800 d-flex justify-between w-100">
                             {{ $history->created_at }}
-                            <a href="/history/{{ $history->id }}">Detail</a>
+                            <a href="/history/{{ $history->id }}" class="bg-blue-700 ml-4 p-3 rounded-md hover:bg-blue-800">Detail</a>
                     </caption>
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>

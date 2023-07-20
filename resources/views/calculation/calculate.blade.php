@@ -26,7 +26,7 @@
           <tbody id="alt-body">
               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="0">
                   <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <select name="alt[0]" id="alt[0]" class="w-2/5 text-black">
+                    <select name="alt[0]" id="alt[0]" class="w-2/5 text-black bg-gray-600">
                       @foreach ($alternatives as $alternative)
                           <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
                       @endforeach
@@ -69,7 +69,7 @@
       alt_dropdown.innerHTML = `@foreach ($alternatives as $alternative)
             <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
         @endforeach`
-      alt_dropdown.classList.add ('w-2/5', 'text-black')
+      alt_dropdown.classList.add ('w-2/5', 'text-black', 'bg-gray-500')
         
       alt_td.appendChild(alt_dropdown)
 

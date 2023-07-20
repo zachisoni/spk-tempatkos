@@ -1,11 +1,12 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Add New Alternative') }}
+      {{ __('Alternative') }}
     </h2>
   </x-slot>
-  
-  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-10 bg-gray-800">
+  <div class="py-12 bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply">
+  <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 py-7 bg-gray-800 rounded-md my-5">
+    <h2 class="text-xl text-white pb-3 font-bold">Please input your alternative data</h2>
     <form action="{{request()->routeIs('alternatives/add') ? route('alternatives/store') : '/alternatives/update/'.$alternative->id}}" method="POST">
       @method('put')
       @csrf
@@ -48,5 +49,5 @@
       <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mr-2 mb-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
     </form>
   </div>
-
+</div>
 </x-app-layout>

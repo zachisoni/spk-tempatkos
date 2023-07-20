@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>KostAn</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -41,8 +41,8 @@
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="https://flowbite.com/" class="flex items-center">
-                  <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap">Flowbite</span>
+                  <img src="/img/logo.jpg" class="h-8 mr-3"/>
+                  <span class="self-center text-xl font-semibold whitespace-nowrap">KostAn</span>
               </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
