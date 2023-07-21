@@ -42,7 +42,9 @@
           </thead>
           <tbody >
             @foreach ($alternatives as $alternative)
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <form action="/alternatives/delete/{{ $alternative->id }}" method="post">
+                  @csrf
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white w-4">
                     {{ $alternative->id; }}
                   </th>
@@ -57,12 +59,12 @@
                         class="text-blue-500 mx-5">
                       Edit
                     </a>
-                    <a href="/alternatives/delete/{{ $alternative->id }}" onclick="return confirm('Are you sure want to delete this alternative?')"
-                        class="text-red-500 mx-5">
-                      Delelte
-                    </a>
+                    <button type="submit" onclick="return confirm('Are you sure want to delete this alternative?')"
+                        class="text-red-500 mx-5">Delete
+                    </button>
                   </td>
-                </tr>
+                </form>
+              </tr>
             @endforeach
           </tbody>
         </table>

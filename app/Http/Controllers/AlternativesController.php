@@ -33,7 +33,8 @@ class AlternativesController extends Controller
     }
 
     public function delete(int $id){
-        Alternative::destroy($id);
+        $alternative = Alternative::find($id);
+        $alternative->delete();
         return redirect()->to('/alternatives');
     }
 
