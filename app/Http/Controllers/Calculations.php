@@ -24,12 +24,14 @@ class Calculations extends Controller
         $datas = [];
         $names = [];
         $alternatives = $request->input('alt');
+        $ids = $request->input('ids');
+        $ids_arrr = explode('|', $ids);
 
-        for ($i=0; $i < count($alternatives); $i++) { 
-            $datas[$i] = Alternative::getAll()->find($alternatives[$i]);
+        for ($i=0; $i < count($ids_arrr) - 1; $i++) { 
+            $datas[$i] = Alternative::getAll()->find($alternatives[$ids_arrr[$i]]);
         }
 
-        // dd($alternatives);
+        // dd($datas);
 
         //Transpose (Kolom jadi baris, baris jadi kolom) hasil dari databse
         $transposed = [];
