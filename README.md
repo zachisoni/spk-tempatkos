@@ -38,10 +38,10 @@ Untuk menjalankan sistem ini secara local, ikuti lankgah-langkah berikut:
         npm install
 
 
-8. Build dependencies
+8. Jalankan npm agar tampilan menjadi lebih bagus, dan perubahan pada UI akan langsung terlihat
 
 
-        npm run build
+        npm run dev
 
 
 8. Jalankan sistem

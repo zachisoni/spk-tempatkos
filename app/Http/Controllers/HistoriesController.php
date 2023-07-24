@@ -6,6 +6,7 @@ use App\Models\Alternative;
 use App\Models\Calculation;
 use App\Models\History;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HistoriesController extends Controller
 {
@@ -23,7 +24,7 @@ class HistoriesController extends Controller
         $results = [];
         foreach ($datas as $key => $data) {
             $results[''.$data->value.''] = $key;
-            $values[$key] = Alternative::getAll()->find($data->alternative_id);
+            $values[$key] = Alternative::withTrashed()->where('user_id', Auth::user()->id)->get()->find($data->alternative_id);
             $names[$key] = $values[$key]->name;
             $normalization[$key][0] = $data->n1;
             $normalization[$key][1] = $data->n2;

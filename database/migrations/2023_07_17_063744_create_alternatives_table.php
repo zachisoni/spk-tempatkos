@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('criteria4');
             $table->integer('criteria5');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

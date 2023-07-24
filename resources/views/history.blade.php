@@ -5,9 +5,10 @@
         </h2>
     </x-slot>
     
-    <div class="py-12 bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply">
+    <div class="py-12 bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- table --}}
+            @if ($histories == null)
             @foreach ($histories as $history)
             @php($i = 1)
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-6">
@@ -48,7 +49,9 @@
                 </table>
             </div>
             @endforeach
-            
+            @else
+                <h1>No Record Found</h1>
+            @endif
 
             {{-- <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">

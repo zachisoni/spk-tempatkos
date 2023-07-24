@@ -31,7 +31,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="min-h-screen">
                 {{ $slot }}
             </main>
         </div>
