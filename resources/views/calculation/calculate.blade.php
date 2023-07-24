@@ -7,13 +7,13 @@
 
   <div class="py-12 bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-    <h1 class="text-white font-bold text-xl">Please choose several alternatives to calculate</h1>
+    <h1 class="text-white font-bold text-xl mb-4">Please choose several alternatives to calculate</h1>
     
     <form action="{{ route('calculation/result') }}" method="POST">
       @csrf
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table class="w-full text-sm text-left text-gray-400">
+          <thead class="text-xs uppercase bg-gray-700 text-gray-400">
               <tr>
                   <th scope="col" class="px-6 py-3">
                       Product name
@@ -24,9 +24,9 @@
               </tr>
           </thead>
           <tbody id="alt-body">
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="0">
-                  <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <select name="alt[0]" id="alt[0]" class="w-2/5 text-black bg-gray-600">
+              <tr class="bg-gray-800 border-b hover:bg-gray-900" id="0">
+                  <th scope="row" class="px-6 py-3 font-medium whitespace-nowrap text-white">
+                    <select name="alt[0]" id="alt[0]" class="w-2/5 text-black bg-gray-600 rounded-md">
                       @foreach ($alternatives as $alternative)
                           <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
                       @endforeach
@@ -40,7 +40,7 @@
       </table>
     </div>
     <input type="text" name="ids" id="ids" value="0|" hidden>
-      <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-md px-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 p-3 m-5 text-center"
+      <button type="button" class="focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-md px-5 bg-green-600 hover:bg-green-700 focus:ring-green-800 p-3 m-5 text-center"
         id="btn-add" onclick="addRow();">Tambah Alternatif</button>
       <button type="submit" class="bg-blue-600 hover:bg-blue-800 p-3 rounded-md">Hitung</button>
     </form>
@@ -60,17 +60,17 @@
 
     function addRow(){
       const row = document.createElement('tr')
-      row.classList.add ('bg-white','border-b','dark:bg-gray-800','dark:border-gray-700','hover:bg-gray-50', 'dark:hover:bg-gray-600')
+      row.classList.add ('bg-gray-800', 'border-b', 'hover:bg-gray-900')
       row.id = size
       const alt_td = document.createElement('th')
-      alt_td.classList.add ('px-6', 'py-3', 'font-medium', 'text-gray-900', 'whitespace-nowrap', 'dark:text-white')
+      alt_td.classList.add ('px-6', 'py-3', 'font-medium', 'whitespace-nowrap', 'text-white')
       const alt_dropdown = document.createElement('select')
       alt_dropdown.setAttribute("name", `alt[${size}]`)
       alt_dropdown.id = `alt[${size}]`
       alt_dropdown.innerHTML = `@foreach ($alternatives as $alternative)
             <option value="{{ $alternative->id }}">{{ $alternative->name }}</option>
         @endforeach`
-      alt_dropdown.classList.add ('w-2/5', 'text-black', 'bg-gray-500')
+      alt_dropdown.classList.add ('w-2/5', 'text-black', 'bg-gray-500','rounded-md')
         
       alt_td.appendChild(alt_dropdown)
 
