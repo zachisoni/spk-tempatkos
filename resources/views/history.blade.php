@@ -12,12 +12,12 @@
             @foreach ($histories as $history)
             @php($i = 1)
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-6">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800 d-flex justify-between w-100">
+                <table class="w-full text-sm text-left text-gray-400">
+                    <caption class="p-5 text-lg font-semibold text-left text-white bg-gray-800 d-flex justify-between w-100">
                             {{ $history->created_at }}
                             <a href="/history/{{ $history->id }}" class="bg-blue-700 ml-4 p-3 rounded-md hover:bg-blue-800">Detail</a>
                     </caption>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3 w-4">
                                 Rank
@@ -32,8 +32,8 @@
                     </thead>
                     <tbody>
                         @foreach ($history->calculation as $calculation)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white w-4">
+                        <tr class="border-b bg-gray-800 border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-white w-4">
                                 {{ $i }}
                             </th>
                             <td class="px-6 py-4">

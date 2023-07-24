@@ -9,11 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- table --}}
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                <table class="w-full text-sm text-left text-gray-400">
+                    <caption class="p-5 text-lg font-semibold text-left text-white bg-gray-800">
                             Value 
                     </caption>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3" >
                                 <span class="sr-only">Alternatif</span>
@@ -37,7 +37,7 @@
                     </thead>
                     <tbody>
                         @foreach ($names as $key => $name)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <tr class= border-b bg-gray-800 border-gray-700">
                             <th class="px-6 py-4 ">
                                 {{ $name }}
                             </th>
@@ -63,11 +63,11 @@
             </div>
 
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                <table class="w-full text-sm text-left text-gray-400">
+                    <caption class="p-5 text-lg font-semibold text-left text-white bg-gray-800">
                             Normalization
                     </caption>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3" >
                                 <span class="sr-only">Alternatif</span>
@@ -91,7 +91,7 @@
                     </thead>
                     <tbody>
                         @foreach ($normalization as $key => $normal)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <tr class= border-b bg-gray-800 border-gray-700">
                             <th class="px-6 py-4 ">
                                 {{ $names[$key] }}
                             </th>
@@ -117,11 +117,11 @@
             </div>
             
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                <table class="w-full text-sm text-left text-gray-400">
+                    <caption class="p-5 text-lg font-semibold text-left text-white bg-gray-800">
                             Ranking
                     </caption>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3" >
                                 <span class="sr-only">Alternatif</span>
@@ -140,7 +140,7 @@
                     <tbody>
                         @php($rank = 1)
                         @foreach ($results as $key => $result)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <tr class= border-b bg-gray-800 border-gray-700">
                             <th class="px-6 py-4">
                                 {{ $names[$result] }}
                             </th>
@@ -160,8 +160,8 @@
                 </table>
             </div>
 
-            {{-- <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            {{-- <div class= overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6">
                     {{ __("You're logged in!") }}
                 </div>
             </div> --}}
