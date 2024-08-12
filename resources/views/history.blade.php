@@ -8,7 +8,7 @@
     <div class="py-12 bg-center bg-scroll bg-[url('https://source.unsplash.com/1500x1000?dorm')] bg-gray-700 bg-blend-multiply h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- table --}}
-            @if ($histories == null)
+            @if ($histories != null)
             @foreach ($histories as $history)
             @php($i = 1)
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-6">

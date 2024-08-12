@@ -36,7 +36,7 @@
             <div class="flex pt-20 justify-between flex-wrap">
                 <div class="w-8/12 items-center">
                     <h2 class="text-5xl font-black pb-10">APA SIH METODE "SIMPLE ADDITIVE WEIGHT" ??</h2>
-                    <p class="text-xl text-justify font-semibold">Metode SAW (Simple Additive Weighting) adalah salah satu metode yang digunakan dalam pengambilan keputusan multikriteria. Metode ini digunakan untuk mengevaluasi dan memilih alternatif terbaik dari suatu pilihan berdasarkan serangkaian kriteria yang telah ditetapkan sebelumnya. Metode SAW mengasumsikan bahwa setiap kriteria memiliki tingkat kepentingan yang berbeda-beda, dan bobot untuk setiap kriteria harus ditetapkan terlebih dahulu.</p>
+                    <p class="text-xl text-justify">Metode SAW (Simple Additive Weighting) adalah salah satu metode yang digunakan dalam pengambilan keputusan multikriteria. Metode ini digunakan untuk mengevaluasi dan memilih alternatif terbaik dari suatu pilihan berdasarkan serangkaian kriteria yang telah ditetapkan sebelumnya. Metode SAW mengasumsikan bahwa setiap kriteria memiliki tingkat kepentingan yang berbeda-beda, dan bobot untuk setiap kriteria harus ditetapkan terlebih dahulu.</p>
                 </div>
                 <img src="/img/photo-1.png" width="250pt">
             </div>
