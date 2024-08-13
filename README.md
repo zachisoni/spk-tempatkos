@@ -1,7 +1,12 @@
-# KOS An
+# KOStAn
 
 Sistem pendukung keputusan dengan metode SAW berbentuk web menggunakan framwork laravel sebagai tugas akhir dari mata kuliah Sistem Pendukung Keputusan, Framework Programming dan Software Quality Asurance
 
+## Web
+Untuk mengakses Web, buka link :
+https://kostan.vercel.app
+
+## Local
 Untuk menjalankan sistem ini secara local, ikuti lankgah-langkah berikut:
 1. clone repository ini. Buka git bash/terminal/cmd, lalu jalankan:
 
